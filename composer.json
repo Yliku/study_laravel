@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "jenssegers/mongodb": "^3.6",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "spatie/laravel-http-logger": "^1.4"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
