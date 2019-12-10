@@ -58,7 +58,7 @@ class LogWriter extends \Spatie\HttpLogger\DefaultLogWriter {
 			$bodyAsJson['response'] = $this->response->getContent();
 		}
 		$message = "ACCESS LOG: " . json_encode($bodyAsJson);
-		Log::info($message);
+		Log::info($message);	//這句會將上面收到的所有資料寫到storages/logs中，將這句換成mongodb就可以寫入mongodb了
 	}
 
 	protected function filterUnnecessary(array $data) : array {
