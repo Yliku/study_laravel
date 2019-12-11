@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Arr;
+use DB;
 
 class LogWriter extends \Spatie\HttpLogger\DefaultLogWriter {
 
@@ -57,8 +58,9 @@ class LogWriter extends \Spatie\HttpLogger\DefaultLogWriter {
 		if ($status_code != '200') {
 			$bodyAsJson['response'] = $this->response->getContent();
 		}
-		$message = "ACCESS LOG: " . json_encode($bodyAsJson);
-		Log::info($message);	//這句會將上面收到的所有資料寫到storages/logs中，將這句換成mongodb就可以寫入mongodb了
+		// $message = "ACCESS LOG: " . json_encode($bodyAsJson);
+		// Log::info($message);	//這句會將上面收到的所有資料寫到storages/logs中，將這句換成mongodb就可以寫入mongodb了
+		DB::connection('mongodb')->table('logs')->insert($bodyAsJson);
 	}
 
 	protected function filterUnnecessary(array $data) : array {
