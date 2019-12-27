@@ -8,7 +8,7 @@ use DB;
 class TestController extends Controller
 {
     public function test1(){
-    	DB::collection('users')->insert([
+    	DB::connection('mongodb')->collection('users')->insert([
     		'name'=>'tom',
     		'age'=>12,
     	]);
