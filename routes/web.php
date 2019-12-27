@@ -21,3 +21,6 @@ Route::get('test1', 'TestController@test1');
 Route::get('test2', function () {
     return view('test');
 });
+
+Route::get('newsletter','NewsletterController@create');
+Route::post('newsletter','NewsletterController@store');
