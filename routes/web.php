@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('test1', 'TestController@test1');
+Route::get('showNotification', 'TestController@showNotification');
 
 
 Route::get('test2', function () {
