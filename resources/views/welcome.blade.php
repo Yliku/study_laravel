@@ -8,7 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<link href="{{ mix('css/app.css') }}" rel="stylesheet">
         <!-- Styles -->
         <style>
             html, body {
@@ -62,6 +63,7 @@
                 margin-bottom: 30px;
             }
         </style>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -81,7 +83,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    我的laravel 6.0学习项目
                 </div>
 
                 <div class="links">
@@ -97,4 +99,12 @@
             </div>
         </div>
     </body>
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script>
+        Echo.channel('news')
+           .listen('News', (e) => {
+            console.log(e.message); //调试，收听 news频道 内的 News事件对象，将接收到的事件在控制台打印出来
+            alert(e.message);       //弹出
+        });
+    </script>
 </html>
