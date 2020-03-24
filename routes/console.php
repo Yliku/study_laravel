@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Inspiring;
-
+use App\Events\News;
 /*
 |--------------------------------------------------------------------------
 | Console Routes
@@ -16,3 +16,8 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('bignews', function () {	//测试广播用
+    broadcast(new News("BIG NEWS!"));
+    $this->comment("news sent");
+})->describe('Send news');
