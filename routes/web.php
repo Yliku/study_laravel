@@ -25,3 +25,5 @@ Route::get('test2', function () {
 
 Route::get('newsletter','NewsletterController@create');
 Route::post('newsletter','NewsletterController@store');
+
+Route::post('test/{user}','TestController@routeParameterTest');
