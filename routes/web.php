@@ -27,3 +27,8 @@ Route::get('newsletter','NewsletterController@create');
 Route::post('newsletter','NewsletterController@store');
 
 Route::post('test/{user}','TestController@routeParameterTest');
+
+
+Route::get('chart', function () {
+    return view('chart');
+});
