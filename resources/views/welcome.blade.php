@@ -106,5 +106,8 @@
             console.log(e.message); //调试，收听 news频道 内的 News事件对象，将接收到的事件在控制台打印出来
             alert(e.message);       //弹出
         });
+       setTimeout(function() {
+           alert(1111);
+        }, 1000);
     </script>
 </html>

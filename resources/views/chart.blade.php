@@ -6,7 +6,9 @@
 </head>
 <body>
 	<a href="https://www.chartjs.org/">柱状图</a>
-    <canvas id="myChart" width="400" height="400"></canvas>
+    <!-- <div class="chart-container" style="position: relative; height:20vh; width:40vw"> -->
+        <canvas id="myChart"></canvas>
+    <!-- </div> -->
 </body>
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"></script> -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script> -->
@@ -14,6 +16,7 @@
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script> -->
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
@@ -52,6 +55,8 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+myChart.canvas.parentNode.style.height = '500px';   //设置显示窗口高度
+myChart.canvas.parentNode.style.width = '800px';   //设置显示窗口宽度
 </script>
 
 </html>

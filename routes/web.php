@@ -22,6 +22,9 @@ Route::get('showNotification', 'TestController@showNotification');
 Route::get('test2', function () {
     return view('test');
 });
+Route::get('globe', function () {
+    return view('globe');
+});
 
 Route::get('newsletter','NewsletterController@create');
 Route::post('newsletter','NewsletterController@store');
