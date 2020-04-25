@@ -35,3 +35,8 @@ Route::post('test/{user}','TestController@routeParameterTest');
 Route::get('chart', function () {
     return view('chart');
 });
+
+//打印SQL语句测试
+Route::get('simgle_sql', 'TestController@simgleSql');		//打印单条SQL语句
+Route::get('n_plus_one_sql', 'TestController@nPlusOneSql');	//数据库SQL语句的N+1问题
+Route::get('two_sql', 'TestController@twoSql');	//with()预加载解决N+1问题

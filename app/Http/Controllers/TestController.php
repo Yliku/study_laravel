@@ -30,4 +30,26 @@ class TestController extends Controller
     public function routeParameterTest(User $user, TestRequest $request){
         return response()->json($user);
     }
+
+    public function simgleSql() {
+        return User::get();
+    }
+
+    public function nPlusOneSql() { //N+1问题
+        $users = User::get();   //一条SQL语句
+        $result = [];
+        foreach ($users as $key => $value) {
+            $result[] = $value->pages;  //N条SQL语句
+        }
+        return $result;
+    }
+
+    public function twoSql() {    //解决N+1问题
+        $users = User::with('pages')->get();   //使用with进行预加载，2条SQL语句
+        $result = [];
+        foreach ($users as $key => $value) {
+            $result[] = $value->pages;  //有了预加载，在这里不会进行SQL查询，会从上面的结果 $users中直接获取
+        }
+        return $result;
+    }
 }

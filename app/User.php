@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function pages() {   //数据库关联Pages table，一对多
+        # code...
+        return $this->hasMany(Page::class, 'owner_id', 'id');
+    }
 }
