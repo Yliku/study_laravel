@@ -25,6 +25,9 @@ Route::get('test2', function () {
 Route::get('globe', function () {
     return view('globe');
 });
+Route::get('js_import_test', function () {
+    return view('js_import');
+});
 
 Route::get('newsletter','NewsletterController@create');
 Route::post('newsletter','NewsletterController@store');
