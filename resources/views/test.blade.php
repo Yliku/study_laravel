@@ -18,6 +18,8 @@
 		<input type="text" name="test">
 		<input type="submit" value="Submit" />
     </form>
+
+    <span>git rebase 测试2</span>
 </body>
 
 </script> 
